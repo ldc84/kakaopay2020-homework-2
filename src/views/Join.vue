@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-import Input from '@/components/form/input';
+import Input from '~@/form/input';
 
 export default {
   components: {
