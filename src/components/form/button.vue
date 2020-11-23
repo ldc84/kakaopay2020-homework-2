@@ -24,7 +24,7 @@ export default {
   .button {
     display:inline-block;
     > button {
-      height: 36px;
+      height: 46px;
       padding: 8px 15px;
       color:#333;
       font-size:18px;
@@ -37,6 +37,23 @@ export default {
       cursor: pointer;
       &:focus {
         outline: none;
+      }
+      &:active {
+        background-color:#999;
+      }
+    }
+    &.block {
+      > button {
+        display:block;
+        width:100%;
+      }
+    }
+    &.btn-sm {
+      > button {
+        height:32px;
+        padding-top:4px;
+        padding-bottom:4px;
+        font-size:14px;
       }
     }
     &.floating {

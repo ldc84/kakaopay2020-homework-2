@@ -1,12 +1,18 @@
 <template>
-  <div class="input-box">
-    <input 
-      :type="type" 
-      :value="value" 
-      :placeholder="placeholder" 
-      :class="className" 
+  <div class="select-box">
+    <select 
+      v-model="value" 
       @input="myValue" 
-    />
+    >
+      <option disabled value="">선택</option>
+      <option 
+        v-for="(item, index) in items" 
+        :key="index" 
+        :value="item"
+      >
+        {{ item }}
+      </option>
+    </select>
   </div>
 </template>
 
@@ -14,13 +20,11 @@
 export default {
   props: {
     value: String,
-    type: String,
-    placeholder: String,
-    className: String,
-    size: String,
+    items: Array,
   },
   methods: {
     myValue($evt){
+      console.log('test')
       this.$emit('input', $evt.target.value);
     }
   }
@@ -28,8 +32,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .input-box {
-    input {
+  .select-box {
+    select {
       width:100%;
       height:32px;
       line-height:30px;
